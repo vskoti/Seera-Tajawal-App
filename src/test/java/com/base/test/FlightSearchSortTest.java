@@ -17,6 +17,8 @@ import com.base.drivers.factory.DriverFactory;
 import com.base.listeners.ExtentListenerAdapter;
 import com.base.pagefactory.ObjectRepo;
 import com.base.pages.FlightHotelMenuPage;
+import com.base.pages.SearchFlightsPage;
+import com.base.pages.SearchOriginDestinationPage;
 import com.base.pages.TajawalBasePage;
 import com.base.utils.CustomLogger;
 import com.base.utils.ElementUtil;
@@ -78,8 +80,29 @@ public class FlightSearchSortTest {
 						tajawalBasePage);
 				WaitUtil.waitForElementToBeClickable(appiumDriver, FlightHotelMenuPage.flightsTabXpath, Locator.Xpath,
 						40L);
-				ElementUtil.clickElement(appiumDriver, flightHotelMenuPage.getFlightsTab());
-
+				
+				SearchFlightsPage searchFlightsPage = flightHotelMenuPage.clickFlightsTab(appiumDriver, flightHotelMenuPage);
+				WaitUtil.waitForElementToDisplay(appiumDriver, SearchFlightsPage.searchFlightsTextXpath, Locator.Xpath, 10L);
+				boolean isSearchFlightDislayed = searchFlightsPage.getSerchFlightsText().isDisplayed(); 
+				if(isSearchFlightDislayed) {
+					CustomLogger.logResultData("Passed", "Search Flight page :", " Displayed", 1);
+				}else {
+					CustomLogger.logResultData("Failed", "Search Flight page :", " Not Displayed", 1);
+				}
+                
+				SearchOriginDestinationPage searchOriginDestinationPage = searchFlightsPage.clickFrom(appiumDriver, searchFlightsPage);
+				ElementUtil.setInput(appiumDriver, searchOriginDestinationPage.getOriginDestinationInputSearch(), "DXB");
+				
+				WaitUtil.waitForElementToDisplay(appiumDriver, SearchOriginDestinationPage.firstSuggestionXpath, Locator.Xpath, 10L);
+				searchOriginDestinationPage = searchOriginDestinationPage.clickFirstSuggestion(appiumDriver, searchOriginDestinationPage);
+				WaitUtil.waitForElementToDisplay(appiumDriver, SearchOriginDestinationPage.searchDestinationXpath, Locator.Xpath, 10L);
+				ElementUtil.setInput(appiumDriver, searchOriginDestinationPage.getOriginDestinationInputSearch(), "BLR");
+				WaitUtil.waitForElementToDisplay(appiumDriver, SearchOriginDestinationPage.firstSuggestionXpath, Locator.Xpath, 10L);
+				searchOriginDestinationPage.clickFirstSuggestion(appiumDriver, searchOriginDestinationPage);
+				searchFlightsPage = new SearchFlightsPage(appiumDriver);
+				ElementUtil.clickElement(appiumDriver, searchFlightsPage.getDepartureDateInput());
+				
+				Thread.sleep(50000);
 				// flight search
 				// date picker utility
 				// wait for page load

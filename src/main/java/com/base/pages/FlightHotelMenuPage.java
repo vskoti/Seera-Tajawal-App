@@ -4,6 +4,7 @@
 package com.base.pages;
 
 import com.base.pagefactory.MobileDriverPage;
+import com.base.utils.ElementUtil;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -28,6 +29,10 @@ public class FlightHotelMenuPage extends MobileDriverPage{
 		return flightsTab;
 	}
 
+	  public SearchFlightsPage clickFlightsTab(AppiumDriver<MobileElement> driver, FlightHotelMenuPage flightHotelMenuPage) {
+	    	ElementUtil.clickElement(driver, flightHotelMenuPage.getFlightsTab());
+	    	return new SearchFlightsPage(driver);
+	    }
 	
 	
 }
