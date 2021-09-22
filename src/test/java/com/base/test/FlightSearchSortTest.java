@@ -50,8 +50,8 @@ public class FlightSearchSortTest {
 	 *          configured products is handled. <b>Verify end to end order placement
 	 *          <b>
 	 */
-	@Test(groups = { "smoke", "all", "placeorder" })
-	public void testProductAddToCartCheckoutPlaceOrder() {
+	@Test(groups = { "smoke", "sanity"})
+	public void testFlightSearchSort() {
 		AppiumDriver<MobileElement> appiumDriver = DriverFactory.getDriver();
 
 		try {
