@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<suite name="SauceLabs-Mobile-App-Tests" verbose="10" parallel="test">
+
+	<test name="smoke">
+		<parameter name="systemPort" value="8100"></parameter>
+		<parameter name="PlatformName" value="Android"></parameter>
+		<parameter name="DeviceName" value="Emulator_Pixel5"></parameter>
+		<groups>
+			<run>
+				<include name="smoke" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.base.test.FlightSearchSortTest">
+			</class>
+
+		</classes>
+	</test>
+
+	<test name="sanity">
+		<parameter name="systemPort" value="8135"></parameter>
+		<parameter name="PlatformName" value="IOS"></parameter>
+		<parameter name="DeviceName" value="IPhone 11"></parameter>
+		<groups>
+			<run>
+				<include name="sanity" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.base.test.FlightSearchSortTest">
+			</class>
+
+		</classes>
+	</test>
+
+</suite>
