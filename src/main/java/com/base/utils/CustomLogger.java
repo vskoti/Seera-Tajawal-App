@@ -3,7 +3,6 @@
  */
 package com.base.utils;
 
-import java.io.File;
 import java.util.Calendar;
 
 import org.openqa.selenium.OutputType;
@@ -13,7 +12,6 @@ import com.base.drivers.factory.DriverFactory;
 import com.base.reporting.ExtentManager;
 import com.base.reporting.ExtentTestManager;
 import com.relevantcodes.extentreports.LogStatus;
-import org.apache.commons.codec.binary.*;
 
 /**
  * @author Sindhu Koti

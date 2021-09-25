@@ -6,7 +6,7 @@
 	<test name="smoke">
 		<parameter name="systemPort" value="8100"></parameter>
 		<parameter name="PlatformName" value="Android"></parameter>
-		<parameter name="DeviceName" value="Emulator_Pixel5"></parameter>
+		<parameter name="DeviceName" value="R58N73RD8QL"></parameter>
 		<groups>
 			<run>
 				<include name="smoke" />

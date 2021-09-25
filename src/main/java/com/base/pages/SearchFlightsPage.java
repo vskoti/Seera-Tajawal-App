@@ -5,6 +5,8 @@ package com.base.pages;
 
 import com.base.pagefactory.MobileDriverPage;
 import com.base.utils.ElementUtil;
+import com.base.utils.WaitUtil;
+import com.base.utils.WaitUtil.Locator;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -37,11 +39,20 @@ public class SearchFlightsPage extends MobileDriverPage {
 	private MobileElement toInput;
 
 	@AndroidFindBy(xpath = "//*[@text='Departure date']")
+	//@AndroidFindBy(id = "com.tajawal:id/tvItemText")
 	private MobileElement departureDateInput;
 
 	@AndroidFindBy(xpath = "//*[@text='Return date']")
+	//@AndroidFindBy(xpath = "//androidx.cardview.widget.CardView[@index='1']//*[@text='Return date']")
 	private MobileElement returnDateInput;
 
+	@AndroidFindBy(id = "com.tajawal:id/flightPaxView")
+	private MobileElement addPassengersCard;
+	
+	@AndroidFindBy(id = "com.tajawal:id/btnFlightSearch")
+	private MobileElement searchFlightButton;
+	
+	
 	public MobileElement getSerchFlightsText() {
 		return serchFlightsText;
 	}
@@ -66,6 +77,16 @@ public class SearchFlightsPage extends MobileDriverPage {
 		return returnDateInput;
 	}
 
+	 
+	public MobileElement getAddPassengersCard() {
+		return addPassengersCard;
+	}
+
+	
+	public MobileElement getSearchFlightButton() {
+		return searchFlightButton;
+	}
+
 	public SearchOriginDestinationPage clickFrom(AppiumDriver<MobileElement> driver,  SearchFlightsPage searchFlightsPage) {
 		ElementUtil.clickElement(driver, searchFlightsPage.getFromInput());
 		return new SearchOriginDestinationPage(driver);
@@ -75,4 +96,26 @@ public class SearchFlightsPage extends MobileDriverPage {
 		ElementUtil.clickElement(driver, searchFlightsPage.getToInput());
 		return new SearchOriginDestinationPage(driver);
 	}
+	
+	public DatePickerPage clickDepartureDay(AppiumDriver<MobileElement> driver,  SearchFlightsPage searchFlightsPage) {
+		ElementUtil.clickElement(driver, searchFlightsPage.getDepartureDateInput());
+		return new DatePickerPage(driver);
+	}
+	
+	public DatePickerPage clickReturnDay(AppiumDriver<MobileElement> driver,  SearchFlightsPage searchFlightsPage) {
+		ElementUtil.clickElement(driver, searchFlightsPage.getReturnDateInput());
+		return new DatePickerPage(driver);
+	}
+	
+	public AddPassengerAndClassPage clickAddPassengers(AppiumDriver<MobileElement> driver,  SearchFlightsPage searchFlightsPage) {
+		ElementUtil.clickElement(driver, searchFlightsPage.getAddPassengersCard());
+		return new AddPassengerAndClassPage(driver);
+	}
+	public FlightResultPage clickSearchFlights(AppiumDriver<MobileElement> driver,  SearchFlightsPage searchFlightsPage) {
+		ElementUtil.clickElement(driver, searchFlightsPage.getSearchFlightButton());
+		WaitUtil.waitForElementToDisplay(driver, FlightResultPage.header, Locator.Id, 60L);
+		WaitUtil.waitForElementToDisplay(driver, FlightResultPage.resultFilters, Locator.Id, 60L);
+		return new FlightResultPage(driver);
+	}
+	
 }

@@ -4,13 +4,11 @@
 package com.base.drivers.factory;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeTest;
 
 import com.base.utils.ConfigConstants;
 import com.base.utils.GenericUtil;
@@ -18,8 +16,6 @@ import com.base.utils.GenericUtil;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 

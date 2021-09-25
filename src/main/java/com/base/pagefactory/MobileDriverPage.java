@@ -1,9 +1,5 @@
 package com.base.pagefactory ;
 
-import org.openqa.selenium.WebDriver;
-
-import com.base.drivers.factory.DriverFactory;
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 

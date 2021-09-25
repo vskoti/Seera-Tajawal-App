@@ -4,8 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.base.drivers.factory.DriverFactory;
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
@@ -87,5 +85,12 @@ public class WaitUtil  {
 		}
 	}
 	
+	public static void waitHard(long timeout) {
+		try {
+			Thread.sleep(timeout);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 	
 }
