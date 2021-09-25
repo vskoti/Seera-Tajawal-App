@@ -16,7 +16,9 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 /**
- * @author sindhu.koti
+ * @author Sindhu Koti
+ * @apiNote FlightResultPage page class for flight results elements. 
+ *           mobile elements, getters and click methods which returns the respective pages. 
  *
  */
 public class FlightResultPage extends MobileDriverPage{

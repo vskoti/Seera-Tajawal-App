@@ -276,8 +276,6 @@ public class FlightSearchSortTest {
 				List<MobileElement> priceElements = flightResultPage.getFlightPriceList();
 				firstFlightPriceAfterSort = Long.parseLong(priceElements.stream().map(p -> p.getText()).collect(Collectors.toList())
 						.get(0).split(" ")[1].replace(",", ""));
-				
-				System.out.println("firstFlightProceAfterSort :"+firstFlightPriceAfterSort);
 			} catch (Exception e) {
 				CustomLogger.logResultData("Failed", "Failed during flights price fetch : ", e.getMessage(), 1);
 				Assert.fail("Failed during flights price fetch : "+ e.getMessage());
@@ -432,7 +430,8 @@ public class FlightSearchSortTest {
 				LocalDate.now().plusMonths(GenericDataUtil.plusMonths).getMonth().name().substring(0, 3).toLowerCase());
 		String dateFieldXpath = DatePickerPage.dateField.replace("xxx", String.valueOf(departureDate - 1));
 		ElementUtil.clickElement(driver, driver.findElement(By.xpath(dateFieldXpath)));
-		WaitUtil.waitHard(4000);
+		// necessitated to use sleep here as on click element function is getting fired at the backed leading to ui delay though element is clickable
+		WaitUtil.waitHard(6000);
 		dateFieldXpath = DatePickerPage.dateField.replace("xxx", String.valueOf(returnDate - 1));
 		WaitUtil.waitForElementToBeClickable(driver, dateFieldXpath, Locator.Xpath, 5L);
 		ElementUtil.clickElement(driver, driver.findElement(By.xpath(dateFieldXpath)));

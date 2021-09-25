@@ -13,8 +13,9 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 /**
- * @author sindhu.koti
- *
+ * @author Sindhu Koti
+ * @apiNote SearchFlightsPage page class for elements used to search for a flight. 
+ *           mobile elements, getters and click methods which returns the respective pages.
  */
 public class SearchFlightsPage extends MobileDriverPage {
 

@@ -14,9 +14,9 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 /**
- * @author sindhu.koti
+ * @author Sindhu Koti
  * @apiNote Add passengers page class for adding the number of adults, child and infants. 
- *          getters and click methods which returns the respective pages. 
+ *          mobile elements, getters and click methods which returns the respective pages. 
  */
 public class AddPassengerAndClassPage extends MobileDriverPage {
      

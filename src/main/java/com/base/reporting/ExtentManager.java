@@ -11,7 +11,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 /**
  * 
  * @author Sindhu Koti
- *
+ * @apiNote for custom reporting
  */
 public class ExtentManager {
     private static ExtentReports report;
