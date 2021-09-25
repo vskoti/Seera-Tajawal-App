@@ -9,7 +9,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 /**
  * 
  * @author Sindhu Koti
- *
+ * @apiNote for custom reporting
  */
 public class ExtentTestManager {
     static Map<Integer, ExtentTest> extentTestMap = new HashMap<Integer, ExtentTest>();

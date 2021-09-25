@@ -10,8 +10,8 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 
 /**
- * Handles interactions with the Selenium 2 {@link PageFactory} and also handles interations with
- * the custom annotations {@link HandlesLoginUsing} and {@link GetsElementsFrom}
+ * @apiNote Handles interactions with the Selenium 2 {@link PageFactory} and also handles interations with
+ *          the custom annotations {@link HandlesLoginUsing} and {@link GetsElementsFrom}
  */
 public final class MobilePageFactory  {
 	

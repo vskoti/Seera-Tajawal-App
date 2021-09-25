@@ -10,8 +10,8 @@ import io.appium.java_client.MobileElement;
 
 /**
  * @author Sindhu Koti
- * This just has a wait method
- * to wait for an element to be clickable before continuing.
+ * @apiNote has all wait method concentrations,
+ *          to wait for an element to be clickable before continuing.
  */
 public class WaitUtil  {
 	

@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.base.utils.ConfigConstants;
-import com.base.utils.GenericUtil;
+import com.base.utils.GenericDataUtil;
 import com.relevantcodes.extentreports.ExtentReports;
 /**
  * 
@@ -21,7 +21,7 @@ public class ExtentManager {
     	String timeStamp = new SimpleDateFormat("MM-dd-yyyy_HH_mm_ss").format(new Date());
     	String path = null ;
     	try {
-    			path = new File("./" + File.separator + GenericUtil.getConfigData(ConfigConstants.HTML_REPORT_FOLDER_NAME)) + "\\ExecutionReport-" + timeStamp + ".html";
+    			path = new File("./" + File.separator + GenericDataUtil.getConfigData(ConfigConstants.HTML_REPORT_FOLDER_NAME)) + "\\ExecutionReport-" + timeStamp + ".html";
     		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

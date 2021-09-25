@@ -17,7 +17,7 @@ import com.base.reporting.ExtentManager;
 import com.base.reporting.ExtentTestManager;
 import com.base.utils.ConfigConstants;
 import com.base.utils.CustomLogger;
-import com.base.utils.GenericUtil;
+import com.base.utils.GenericDataUtil;
 import com.relevantcodes.extentreports.LogStatus;
 
 /**
@@ -54,28 +54,28 @@ public class ExtentListenerAdapter implements ITestListener {
 		boolean isfolderDeleted = false;
 		try {
 			if (!new File(
-					"./" + File.separator + GenericUtil.getConfigData(ConfigConstants.FAILEDSCREENSHOT_FOLDER_NAME))
+					"./" + File.separator + GenericDataUtil.getConfigData(ConfigConstants.FAILEDSCREENSHOT_FOLDER_NAME))
 							.exists()) {
 				new File(
-						"./" + File.separator + GenericUtil.getConfigData(ConfigConstants.FAILEDSCREENSHOT_FOLDER_NAME))
+						"./" + File.separator + GenericDataUtil.getConfigData(ConfigConstants.FAILEDSCREENSHOT_FOLDER_NAME))
 								.mkdirs();
 			} else if (new File(System.getProperty("user.dir") + File.separator
-					+ GenericUtil.getConfigData(ConfigConstants.FAILEDSCREENSHOT_FOLDER_NAME)).exists()
+					+ GenericDataUtil.getConfigData(ConfigConstants.FAILEDSCREENSHOT_FOLDER_NAME)).exists()
 					&& isfolderDeleted == false) {
 				deleteDir(new File("./" + File.separator
-						+ GenericUtil.getConfigData(ConfigConstants.FAILEDSCREENSHOT_FOLDER_NAME)));
+						+ GenericDataUtil.getConfigData(ConfigConstants.FAILEDSCREENSHOT_FOLDER_NAME)));
 				isfolderDeleted = true;
 			}
 
-			if (!new File("./" + File.separator + GenericUtil.getConfigData(ConfigConstants.HTML_REPORT_FOLDER_NAME))
+			if (!new File("./" + File.separator + GenericDataUtil.getConfigData(ConfigConstants.HTML_REPORT_FOLDER_NAME))
 					.exists()) {
-				new File("./" + File.separator + GenericUtil.getConfigData(ConfigConstants.HTML_REPORT_FOLDER_NAME))
+				new File("./" + File.separator + GenericDataUtil.getConfigData(ConfigConstants.HTML_REPORT_FOLDER_NAME))
 						.mkdirs();
 			} else if (new File(System.getProperty("user.dir") + File.separator
-					+ GenericUtil.getConfigData(ConfigConstants.HTML_REPORT_FOLDER_NAME)).exists()
+					+ GenericDataUtil.getConfigData(ConfigConstants.HTML_REPORT_FOLDER_NAME)).exists()
 					&& isfolderDeleted == false) {
 				deleteDir(new File(
-						"./" + File.separator + GenericUtil.getConfigData(ConfigConstants.HTML_REPORT_FOLDER_NAME)));
+						"./" + File.separator + GenericDataUtil.getConfigData(ConfigConstants.HTML_REPORT_FOLDER_NAME)));
 				isfolderDeleted = true;
 			}
 			

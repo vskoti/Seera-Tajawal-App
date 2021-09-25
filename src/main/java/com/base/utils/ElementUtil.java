@@ -4,17 +4,13 @@
 package com.base.utils;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
-import com.base.pagefactory.ObjectRepo;
-import com.base.utils.WaitUtil.Locator;
 
 import io.appium.java_client.MobileElement;
 
 /**
  * @author Sindhu Koti
- *
+ * @apiNote Mobile element actions concentration methods 
  */
 public class ElementUtil {
 

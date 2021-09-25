@@ -25,7 +25,7 @@
 		<parameter name="DeviceName" value="IPhone 11"></parameter>
 		<groups>
 			<run>
-				<include name="sanity" />
+				<include name="smoke" />
 			</run>
 		</groups>
 		<classes>

@@ -11,8 +11,9 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 /**
- * @author sindhu.koti
- *
+ * @author Sindhu Koti
+ * @apiNote SearchOriginDestinationPage . 
+ *           mobile elements, getters and click methods which returns the respective pages.
  */
 public class SearchOriginDestinationPage extends MobileDriverPage{
 

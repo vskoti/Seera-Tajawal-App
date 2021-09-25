@@ -13,8 +13,9 @@ import com.base.reporting.ExtentManager;
 import com.base.reporting.ExtentTestManager;
 import com.relevantcodes.extentreports.LogStatus;
 
-/**
+/** 
  * @author Sindhu Koti
+ * @apiNote Custom Logger class for logging using Extent Report.
  *
  */
 public class CustomLogger {
@@ -49,7 +50,7 @@ public class CustomLogger {
 				screenshotBase64 =   base.append(screenshotBase64.toString());  
 				if (Status.equals("Passed")) {
 					//ExtentTestManager.getTest().log(LogStatus.PASS, Step + "-- The Actual Is : " + '\n' + Decripion, getSource(screenshotBase64, justString).toString());
-					ExtentTestManager.getTest().log(LogStatus.PASS, Step + "-- The Actual Is : " + '\n' + Decripion,"");
+					ExtentTestManager.getTest().log(LogStatus.PASS, Step + "-- The Actual Is : " + '\n' + Decripion,getSource(screenshotBase64, justString).toString());
 					
 				} else {
 					ExtentTestManager.getTest().log(LogStatus.FAIL, Step + "-- The Actual Is : " + '\n' + Decripion,

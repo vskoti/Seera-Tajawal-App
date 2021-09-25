@@ -5,7 +5,7 @@ package com.base.utils;
 
 /**
  * @author Sindhu Koti
- * Field representation of config properties
+ * @apiNote  representation of config properties
  *
  */
 public class ConfigConstants {
@@ -40,8 +40,6 @@ public class ConfigConstants {
   public static final String APPIUM_SERVER_PORTS = "AppiumServerPort";
   
   public static final String ANDROID_SYSTEM_PORT_SMOKE = "AndroidSystemPortForSmoke";
-  
-
   
   public static final String LOGGER_KEY = "devpinoyLogger";
   

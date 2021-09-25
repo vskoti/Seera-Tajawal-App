@@ -11,8 +11,9 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 /**
- * @author sindhu.koti
- *
+ * @author Sindhu Koti
+ * @apiNote FlightHotelMenuPage page class for choosing the Flight booking or Hotel booking.
+ *           mobile elements, getters and click methods which returns the respective pages. 
  */
 public class FlightHotelMenuPage extends MobileDriverPage{
 	

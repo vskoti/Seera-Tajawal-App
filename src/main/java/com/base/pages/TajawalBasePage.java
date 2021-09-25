@@ -13,8 +13,9 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 /**
- * @author sindhu.koti
- *
+ * @author Sindhu Koti
+ * @apiNote TajawalBasePage , base for choosing language and country. 
+ *          mobile elements, getters and click methods which returns the respective pages.
  */
 public class TajawalBasePage extends MobileDriverPage {
 
@@ -40,7 +41,7 @@ public class TajawalBasePage extends MobileDriverPage {
 		return welcomeEnglishButton;
 	}
    
-	public MobileElement getSelectCountry(AppiumDriver<MobileElement> driver, String country) {
+	public MobileElement selectCountryElement(AppiumDriver<MobileElement> driver, String country) {
 		return driver.findElement(By.xpath("//android.widget.TextView[@text='"+country
 				+ "']/preceding-sibling::android.widget.RadioButton"));	
 		}

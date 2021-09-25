@@ -11,7 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.base.utils.ConfigConstants;
-import com.base.utils.GenericUtil;
+import com.base.utils.GenericDataUtil;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -21,7 +21,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 /**
  * @author Sindhu Koti
- *
+ * @apiNote instantiate the driver class based on the OS type configuration in testng and desired capabilities from config.properties. 
  */
 public class DriverFactory {
 
@@ -41,7 +41,7 @@ public class DriverFactory {
 	}
 
 	/**
-	 * Set the desired capability.
+	 * @apiNote  the desired capability as per the OS.
 	 * 
 	 * @throws Exception
 	 */
@@ -50,7 +50,7 @@ public class DriverFactory {
 		DesiredCapabilities desiredCapabilities = null;
 		try {
 
-			String os = GenericUtil.getConfigData(ConfigConstants.PLATFORM_NAME);
+			String os = GenericDataUtil.getConfigData(ConfigConstants.PLATFORM_NAME);
 
 			switch (os.toUpperCase()) {
 			case "IOS":
@@ -58,22 +58,22 @@ public class DriverFactory {
 				break;
 
 			default:
-				File f = new File(GenericUtil.getConfigData(ConfigConstants.APK_PATH));
+				File f = new File(GenericDataUtil.getConfigData(ConfigConstants.APK_PATH));
 				desiredCapabilities = new DesiredCapabilities();
 				desiredCapabilities.setCapability(MobileCapabilityType.APP, f.getAbsolutePath());
 				
-				desiredCapabilities.setCapability("noReset", GenericUtil.getConfigData(ConfigConstants.NO_RESET));
+				desiredCapabilities.setCapability("noReset", GenericDataUtil.getConfigData(ConfigConstants.NO_RESET));
 				desiredCapabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS,
-						GenericUtil.getConfigData(ConfigConstants.AUTO_GRANT_PERMISSIONS));			
+						GenericDataUtil.getConfigData(ConfigConstants.AUTO_GRANT_PERMISSIONS));			
 				desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,
-						GenericUtil.getConfigData(ConfigConstants.AUTOMATION_NAME));
-				desiredCapabilities.setCapability("appPackage", GenericUtil.getConfigData(ConfigConstants.APP_PACKAGE));
+						GenericDataUtil.getConfigData(ConfigConstants.AUTOMATION_NAME));
+				desiredCapabilities.setCapability("appPackage", GenericDataUtil.getConfigData(ConfigConstants.APP_PACKAGE));
 				desiredCapabilities.setCapability("appActivity",
-						GenericUtil.getConfigData(ConfigConstants.MAIN_ACTIVITY));
+						GenericDataUtil.getConfigData(ConfigConstants.MAIN_ACTIVITY));
 				desiredCapabilities.setCapability("avdLaunchTimeout",
-						GenericUtil.getConfigData(ConfigConstants.AVD_TIMEOUT));
+						GenericDataUtil.getConfigData(ConfigConstants.AVD_TIMEOUT));
 				desiredCapabilities.setCapability("newCommandTimeout",
-						GenericUtil.getConfigData(ConfigConstants.NEW_COMMAND_TIMEOUT));
+						GenericDataUtil.getConfigData(ConfigConstants.NEW_COMMAND_TIMEOUT));
 				break;
 			}
 
@@ -95,7 +95,7 @@ public class DriverFactory {
 	public static AppiumDriver<MobileElement> setDriver(int deviceSystemPort, String platformName, String deviceName) {
 		try {
 
-			String[] ports = GenericUtil.getConfigData(ConfigConstants.APPIUM_SERVER_PORTS).split(",");
+			String[] ports = GenericDataUtil.getConfigData(ConfigConstants.APPIUM_SERVER_PORTS).split(",");
 			long appiumPort = Long.parseLong(ports[0]);
 			DesiredCapabilities desiredCapabilities = getDesiredCapabilities();
 
@@ -114,12 +114,12 @@ public class DriverFactory {
 			AppiumDriver<MobileElement> customdriver = new AndroidDriver<MobileElement>(
 					new URL("http://127.0.0.1:" + appiumPort + "/wd/hub/"), getDesiredCapabilities());
 			driver.set(customdriver);
-			boolean isResetApp = Boolean.getBoolean(GenericUtil.getConfigData(ConfigConstants.RESET_APP));
+			boolean isResetApp = Boolean.getBoolean(GenericDataUtil.getConfigData(ConfigConstants.RESET_APP));
 			if (isResetApp) {
 				driver.get().resetApp();
 			}
 			driver.get().manage().timeouts().implicitlyWait(
-					Long.parseLong(GenericUtil.getConfigData(ConfigConstants.WAIT_IMPLICIT_IN_SECONDS)),
+					Long.parseLong(GenericDataUtil.getConfigData(ConfigConstants.WAIT_IMPLICIT_IN_SECONDS)),
 					TimeUnit.SECONDS);
 			driver.get().resetApp();
 		} catch (Exception e) {

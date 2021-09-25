@@ -19,11 +19,11 @@ import io.appium.java_client.touch.offset.PointOption;
 
 /**
  * @author Sindhu Koti
- *
+ * @apiNote Mobile screen utility methods for different gestures.
  */
 public class ScreenUtil {
 	/**
-	 * Scrolls down the page as per the hard coded coordinates 
+	 * @apiNoteScrolls down the page as per the hard coded coordinates 
 	 */
 	public static void scrollDown() {	
 		new TouchAction(DriverFactory.getDriver()).press(PointOption.point(550, 600)).waitAction().moveTo(PointOption.point(500, 10)).release().perform();			     

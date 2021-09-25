@@ -11,8 +11,9 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 /**
- * @author sindhu.koti
- *
+ * @author Sindhu Koti
+ * @apiNote DatePickerPage page class for choosing the departure and return date of travel and apply.
+ *           mobile elements, getters and click methods which returns the respective pages. 
  */
 public class DatePickerPage extends MobileDriverPage{
 

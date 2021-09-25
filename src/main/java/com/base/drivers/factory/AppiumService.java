@@ -7,14 +7,14 @@ import java.io.File;
 
 import org.apache.logging.log4j.LogManager;
 import com.base.utils.ConfigConstants;
-import com.base.utils.GenericUtil;
+import com.base.utils.GenericDataUtil;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
 /**
  * @author Sindhu Koti
- *@apiNote To start and stop the appium server
+ * @apiNote To start and stop the appium server
  */
 public class AppiumService {
 	
@@ -29,10 +29,10 @@ public class AppiumService {
 	public static void startService() {
 		
 		try {
-			File nodeExe =  new File(GenericUtil.getConfigData(ConfigConstants.NODE_HOME_PATH));
-			File appiumJs = new File(GenericUtil.getConfigData(ConfigConstants.APPIUM_SERVER_JS_PATH));
+			File nodeExe =  new File(GenericDataUtil.getConfigData(ConfigConstants.NODE_HOME_PATH));
+			File appiumJs = new File(GenericDataUtil.getConfigData(ConfigConstants.APPIUM_SERVER_JS_PATH));
 			File logFile = new File(System.getProperty("user.dir") + "/AppiumLog.txt"); //new File(GenericUtil.getConfigData(ConfigConstants.APPIUM_LOG_FILE_PATH)).get;		    
-			String[] ports = GenericUtil.getConfigData(ConfigConstants.APPIUM_SERVER_PORTS).split(",");  
+			String[] ports = GenericDataUtil.getConfigData(ConfigConstants.APPIUM_SERVER_PORTS).split(",");  
 			
 				service = 
 					    AppiumDriverLocalService.			

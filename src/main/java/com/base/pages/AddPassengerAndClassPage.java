@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 
 import com.base.pagefactory.MobileDriverPage;
 import com.base.utils.ElementUtil;
-import com.base.utils.GenericUtil.CabinClass;
+import com.base.utils.GenericDataUtil.CabinClass;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -15,7 +15,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 
 /**
  * @author sindhu.koti
- *
+ * @apiNote Add passengers page class for adding the number of adults, child and infants. 
+ *          getters and click methods which returns the respective pages. 
  */
 public class AddPassengerAndClassPage extends MobileDriverPage {
      

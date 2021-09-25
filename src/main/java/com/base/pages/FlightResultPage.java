@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
 
 import com.base.pagefactory.MobileDriverPage;
 import com.base.utils.ElementUtil;
-import com.base.utils.GenericUtil.FlightResultSortBy;
+import com.base.utils.GenericDataUtil.FlightResultSortBy;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
