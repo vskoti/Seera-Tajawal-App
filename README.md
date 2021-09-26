@@ -2,32 +2,33 @@
 Appium test automation for TAJAWAL App from the very Seera Group!
 
 # Concepts Included in the framework: 
-Page Object pattern
-Singleton Object Creation
-Common Mobile elements interaction methods
-Common api interaction methods
-Mavenised parameters for testng test run
-Externalised test configuration
-Parameterization from testng for parallel testing with different system ports
-Commonly used test utility classes/methods
+Page Object pattern,
+Singleton Object Creation,
+Common Mobile elements interaction methods,
+Common api interaction methods,
+Mavenised parameters for testng test run,
+Externalised test configuration,
+Parameterization from testng for parallel testing with different system ports,
+Commonly used test utility classes/methods,
+WebDriver scope limitation for performance enhancement
 
 # Tools:
-Java
-Maven
-Selenium Webdriver
-Appium
-TestNG 
-Log4j 
+Java,
+Maven,
+Selenium Webdriver,
+Appium,
+TestNG,
+Log4j,
 Extent Reports
 
 # Requirements:
 In order to utilise this project you need to have the following installed locally:
 For Android : 
-Maven 
-Java 1.8
-Node
-Appium
-Adroid Studio 
+Maven, 
+Java 1.8,
+Node,
+Appium,
+Adroid Studio, 
 Android SDK
 Note : Other required system/environment variables.
 
